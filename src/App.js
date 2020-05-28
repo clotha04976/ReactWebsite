@@ -2,25 +2,35 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  constructor(props){
+    super(props)
+    this.state = {
+      myState: 'My first state',
+      saySomething: 'Hello World'
+    }
+  }
+
+  changeTxext = () => {
+    this.setState({ saySomething: 'How are you?' })
+  }
+  changeback = () => {
+    this.setState({ saySomething: 'hello World' })
+  }
+
+  render() {
+    return (
+      <div className="App">
+        <p>{this.state.myState}</p>
+        <p>{this.state.saySomething}</p>
+        <button onClick={this.changeTxext}>Click</button>
+        <button onClick={this.changeback}>Click</button>
+      </div>
+    );
+  }
 }
 
 export default App;
+
+
+
