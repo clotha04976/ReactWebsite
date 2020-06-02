@@ -1,6 +1,8 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Navigation from './components/Navigation'
+import Masthead from './components/Masthead'
 
 class App extends React.Component {
   constructor(props){
@@ -21,6 +23,8 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
+        <Navigation/>
+        <Masthead/>
         <p>{this.state.myState}</p>
         <p>{this.state.saySomething}</p>
         <button onClick={this.changeTxext}>Click</button>
